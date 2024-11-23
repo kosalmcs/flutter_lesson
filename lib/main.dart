@@ -16,7 +16,16 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           title: const Text('Flutter Lesson'),
         ),
-        body: const Text('Body'),
+        body: const Center(child: Text('Body')),
+        bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
+          ],
+        ),
       ),
     );
   }
