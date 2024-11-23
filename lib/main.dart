@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           title: const Text('Flutter Lesson'),
         ),
+        body: const Text('Body'),
       ),
     );
   }
