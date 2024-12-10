@@ -12,31 +12,38 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text('Flutter Lesson'),
-        ),
-        drawer: Drawer(),
-        body: const Center(child: Text('Body')),
-        bottomNavigationBar: BottomNavigationBar(
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
-          ],
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.pink,
-          foregroundColor: Colors.white,
-          child: const Icon(Icons.add),
-          onPressed: () {
-            print("Clicked");
-          },
-        ),
+        appBar: _buildAppBar(),
+        drawer: _buildDrawer(),
+        body: _buildBody(),
+        bottomNavigationBar: _buildNavbar(),
       ),
+    );
+  }
+
+  AppBar _buildAppBar() {
+    return AppBar(
+      backgroundColor: const Color.fromARGB(255, 3, 117, 247),
+      // leading: IconButton(onPressed: () {}, icon: Icon(Icons.home)),
+      title: const Text('Flutter Lesson'),
+      actions: <Widget>[
+        IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.camera_alt))
+      ],
+    );
+  }
+
+  Drawer _buildDrawer() => const Drawer();
+  Center _buildBody() => const Center(child: Text('Body'));
+
+  BottomNavigationBar _buildNavbar() {
+    return BottomNavigationBar(
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
+      ],
     );
   }
 }
